@@ -31,12 +31,14 @@ RUN /bin/bash -l -c "curl -L get.rvm.io | bash -s stable"
 RUN /bin/bash -l -c "rvm install 2.4"
 RUN /bin/bash -l -c "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
-RUN /bin/bash -l -c "gem install rails -v 5.1.3"
+RUN /bin/bash -l -c "gem install rails -v 5.1.4"
 
 USER root
 
 EXPOSE 22
 EXPOSE 3000
+
+VOLUME /home/app
 
 CMD ["/usr/sbin/sshd", "-D"]
 

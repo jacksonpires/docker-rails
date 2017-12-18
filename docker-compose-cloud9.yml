@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  cloud9:
+    image: sapk/cloud9
+    volumes:
+      - .:/workspace
+    ports:
+      - "8181:8181"
+    command: --auth username:password

@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  cloud9:
-    image: sapk/cloud9
+  rails:
+    image: jacksonpires/ubuntu-rails-ssh
     volumes:
-      - .:/workspace
+      - .:/home/app
     ports:
-      - "8181:8181"
-    command: --auth username:password
+      - "3000"
+      - "22"

@@ -5,7 +5,7 @@ services:
     build: .
     image: jacksonpires/ubuntu-rails-ssh
     volumes:
-      - .:/home/app
+      - .:/projects
     ports:
       - "3000"
       - "22"

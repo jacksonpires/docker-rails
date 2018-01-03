@@ -38,7 +38,8 @@ USER root
 EXPOSE 22
 EXPOSE 3000
 
-VOLUME /home/app
+RUN mkdir /projects
+VOLUME /projects
 
 CMD ["/usr/sbin/sshd", "-D"]
 

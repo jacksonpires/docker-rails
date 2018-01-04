@@ -9,3 +9,12 @@ services:
     ports:
       - "3000"
       - "22"
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "5432"

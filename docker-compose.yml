@@ -9,6 +9,10 @@ services:
     ports:
       - "3000"
       - "22"
+    depends_on:
+      - db
+    networks:
+      - my_network
   db:
     image: postgres
     restart: always
@@ -18,3 +22,10 @@ services:
       - ./postgres:/var/lib/postgresql/data
     ports:
       - "5432"
+    networks:
+      my_network:
+        aliases:
+          - pgsql
+
+networks:
+  my_network:
